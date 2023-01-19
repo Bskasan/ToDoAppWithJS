@@ -17,6 +17,12 @@ body {
   background-attachment: fixed;
 }
 
+h1 {
+  padding-bottom: 10px;
+  color: rgba(0, 0, 0, 0.671);
+  
+}
+
 button {
   width: 20px;
   font-weight: 600;
@@ -57,8 +63,6 @@ button:hover {
   border-radius: 5px;
 }
 
-
-
 .bottom-list {
   display: flex;
   justify-content: flex-start;
@@ -68,7 +72,7 @@ button:hover {
 
 .list {
   display: flex;
-  box-shadow: 5px 5px 0px rgba(0, 166, 255, 0.742);
+  box-shadow: 3px 3px 3px rgba(240, 238, 113, 0.742);
 }
 
 .list,
@@ -91,13 +95,11 @@ li {
 
 li {
   width: 54vh;
-  box-shadow: 0px 4px 1px rgba(0, 179, 255, 0.281);
+  box-shadow: 3px 3px 3px rgba(240, 238, 113, 0.742);
 }
 #input-value:focus {
   outline: none;
 }
-
-
 
 #input-value,
 button {
@@ -108,7 +110,7 @@ button {
 
 ul {
   list-style: none;
-  box-shadow: 1px 1px 1px black;
+  box-shadow: 3px 3px 3px rgba(240, 238, 113, 0.742);
 }
 
 .li {
@@ -143,7 +145,3 @@ i::before {
   background: transparent;
 }
 
-h1 {
-  padding-bottom: 10px;
-  color: white;
-}
