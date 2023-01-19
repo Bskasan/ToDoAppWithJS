@@ -1,0 +1,149 @@
+/******** RESETTING *******/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url(./images/background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+button {
+  width: 20px;
+  font-weight: 600;
+  background-color: white;
+  box-shadow: 1px 1px 1px lightgray;
+}
+button:hover {
+  color: white;
+  cursor: pointer;
+  background-color: rgb(32, 100, 224);
+  box-shadow: 1px 1px 1px lightblue;
+}
+
+.space {
+  display: flex;
+  height: 20vh;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+  background-color: rgba(0, 0, 0, 0.295);
+  padding: 30px 100px 30px 100px;
+  border-radius: 50px;
+  box-shadow: 3px 3px 3px rgba(240, 238, 113, 0.742);
+}
+
+#add-btn {
+  position: relative;
+  top: 1px;
+  bottom: 10px;
+  font-weight: 500;
+  font-size: 15px;
+  border: 2px solid rgba(0, 0, 0, 0.171);
+  width: 50px;
+  border-radius: 5px;
+}
+
+
+
+.bottom-list {
+  display: flex;
+  justify-content: flex-start;
+  text-align: left;
+  overflow: hidden;
+}
+
+.list {
+  display: flex;
+  box-shadow: 5px 5px 0px rgba(0, 166, 255, 0.742);
+}
+
+.list,
+li {
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+#input-value {
+  width: 50vh;
+  word-wrap: break-word;
+  word-break: break-all;
+  resize: none;
+}
+#input-value::-webkit-scrollbar {
+  display: none;
+}
+
+li {
+  width: 54vh;
+  box-shadow: 0px 4px 1px rgba(0, 179, 255, 0.281);
+}
+#input-value:focus {
+  outline: none;
+}
+
+
+
+#input-value,
+button {
+  height: 25px;
+  font-size: 20px;
+  border: none;
+}
+
+ul {
+  list-style: none;
+  box-shadow: 1px 1px 1px black;
+}
+
+.li {
+  float: right;
+}
+
+.checkmark {
+  float: right;
+}
+
+p {
+  width: 450px;
+  overflow-wrap: break-word;
+}
+
+.lined {
+  text-decoration: line-through;
+}
+
+#created-date {
+  color: red;
+}
+span {
+  font-weight: 900;
+}
+
+.fa-solid {
+  color: green;
+}
+
+i::before {
+  background: transparent;
+}
+
+h1 {
+  padding-bottom: 10px;
+  color: white;
+}
