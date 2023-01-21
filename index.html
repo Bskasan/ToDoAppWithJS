@@ -1,32 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Todo List</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JS Todo List</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="./css/style.css" />
-</head>
+  <body>
+    <main class="container">
+      <header>📚 TO-DO LIST 📚</header>
+      <section class="todo-add">
+        <form class="todo-add">
+          <input
+            type="text"
+            id="todo-input"
+            placeholder="Add New Todo..."
+            autofocus
+          />
+          <button type="submit" id="todo-button">ADD</button>
+        </form>
+      </section>
 
-<body>
-  <main class="container">
-    <header>TO-DO LIST</header>
-    <section class="todo-add">
-      <form class="todo-add">
-        <input type="text" id="todo-input" placeholder="Add New Todo..." autofocus />
-        <button type="submit" id="todo-button">Add</button>
-      </form>
-    </section>
-
-    <section class="todos">
-      <ul id="todo-ul"></ul>
-    </section>
-  </main>
-  <script src="app.js"></script>
-</body>
-
+      <section class="todos">
+        <ul id="todo-ul"></ul>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
 </html>

@@ -1,81 +1,89 @@
-//* Elements - DOM Catching
-//? Fastest one, if there is a 'id' you should use getElementById.
-const todoInput = document.getElementById("input-value");
-const addBtn = document.querySelector("#add-btn");
-const todoUl = document.querySelector("#list");
+//Elements
+const todoInput = document.getElementById("todo-input");
+const addBtn = document.querySelector("#todo-button");
+const todoUl = document.querySelector("#todo-ul");
 
-//? global array for todo obj
+//global array for todo obj
 let todoList = JSON.parse(localStorage.getItem("todoList")) || [];
 
-//? Load event vs. DomContentLoaded (Interview Question)
+//load event vs. DomContentLoaded
 window.addEventListener("load", () => {
   getTodoListFromLocalStorage();
 });
 
 const getTodoListFromLocalStorage = () => {
-  //* get TodoList from localStorage and load to UI
+  //get TodoList from localStorage and load to UI
+  todoList.forEach((todo) => {
+    createTodo(todo);
+  });
 };
 
-//* form => submit event
-//! Alternative Way
-//! form.addEventListener("submit", ()=>{});
-
+//form => submit event vs. button => click event
+// form.addEventListener("submit", ()=>{})
 addBtn.addEventListener("click", (e) => {
+  //prevent form submit
   e.preventDefault();
+  //user input control
   if (todoInput.value.trim() === "") {
     alert("Please, enter new todo text!");
     return;
   }
-  //* alert("continue");
+  // else{
+  //     alert("continue");
+  // }
+  //continue func.
   const newTodo = {
-    id: new Date().getTime(), //* Unique id with ms of now
-    completed: false, //* Status
-    text: todoInput.value, //* User Input
+    id: new Date().getTime(), //unique id with ms of now
+    completed: false, //status
+    text: todoInput.value, //userInput
   };
 
+  // insertTodoToDB(newTodo);
   createTodo(newTodo);
 
+  //UPDATE TODO array
   todoList.push(newTodo);
-  //? localStorage todoList Update, set item given above by using getItem("todoList")
-  //? Local Storage vs. Session Storage (Interview Question)
-  //!!!!!!!! Stringify !!!!!!!!!
+  //localStorage todoList Update
+  //localStorage vs. SessionStorage vs. Cookies
+  //!!!!!!!!stringify!!!!!!!!!
   localStorage.setItem("todoList", JSON.stringify(todoList));
-
-  //? event.target vs. event.currentTarget (Interview Question)
+  //event.target vs. event.currentTarget
   e.target.closest("form").reset();
 });
 
 const createTodo = (newTodo) => {
-  //* todo item creation
-  //* Obj. Destructuring (ES6 => JS)
-  //? What came with ES6? (Interview Question)
+  //todo item creation
+  //alert("item was added");
+  //obj. dest. (ES6 => JS'e kazandırılan yapılar??)
   const { id, completed, text } = newTodo;
 
-  //* Create li
+  //create li
   const li = document.createElement("li");
   li.setAttribute("id", id);
 
-  //* Add class with completed(status)
-  completed ? li.classList.add("lined") : "";
+  //add class with completed(status)
+  completed ? li.classList.add("checked") : "";
 
-  //* create check icon
+  //create check icon
   const icon = document.createElement("i");
   icon.setAttribute("class", "fas fa-check");
-  //? append vs. appendChild(Int. Ques.)
+  //append vs. appendChild
   li.append(icon);
 
-  //* Create item text
+  //create item text
   const p = document.createElement("p");
   p.innerText = text;
   li.appendChild(p);
 
-  //* Create remove icon
+  //create remove icon
   const removeIcon = document.createElement("i");
   removeIcon.setAttribute("class", "fas fa-trash");
   li.append(removeIcon);
 
-  console.log(li);
+  // console.log(li);
 
-  //* Append li to ul
-  todoUl.append(li);
+  //append li to ul
+  //prepend vs. append
+  // todoUl.append(li);
+  todoUl.prepend(li);
 };
