@@ -1,34 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JS Todo List</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./css/style.css">
-    <title>To-Do App</title>
-  </head>
-  <body>
-    <div class="space"></div>
-    <section class="main-container">
-      <h1>📚 TO-DO LIST 📚</h1>
-      <form class="list">
-        <input
-          name="input-value"
-          id="input-value"
-          placeholder="Write your goals here..."
-          autofocus
-        ></input>
-        <button id="add-btn" type="submit">ADD</button>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <main class="container">
+    <header>TO-DO LIST</header>
+    <section class="todo-add">
+      <form class="todo-add">
+        <input type="text" id="todo-input" placeholder="Add New Todo..." autofocus />
+        <button type="submit" id="todo-button">Add</button>
       </form>
-      <div class="space"></div>
-      <h1 id="text-change"></h1>
-      <div class="bottom-list">
-        <ul id="list"></ul>
-      </div>
     </section>
-    <script src="app.js"></script>
-  </body>
+
+    <section class="todos">
+      <ul id="todo-ul"></ul>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+
 </html>

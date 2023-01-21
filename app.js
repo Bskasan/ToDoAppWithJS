@@ -28,7 +28,7 @@ addBtn.addEventListener("click", (e) => {
   }
   //* alert("continue");
   const newTodo = {
-    id: new Date().getTime, //* Unique id with ms of now
+    id: new Date().getTime(), //* Unique id with ms of now
     completed: false, //* Status
     text: todoInput.value, //* User Input
   };
@@ -71,6 +71,11 @@ const createTodo = (newTodo) => {
 
   //* Create remove icon
   const removeIcon = document.createElement("i");
-  icon.setAttribute("class", "fas fa-trash");
+  removeIcon.setAttribute("class", "fas fa-trash");
   li.append(removeIcon);
+
+  console.log(li);
+
+  //* Append li to ul
+  todoUl.append(li);
 };
