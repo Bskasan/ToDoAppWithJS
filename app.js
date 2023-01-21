@@ -47,5 +47,30 @@ addBtn.addEventListener("click", (e) => {
 
 const createTodo = (newTodo) => {
   //* todo item creation
-  
+  //* Obj. Destructuring (ES6 => JS)
+  //? What came with ES6? (Interview Question)
+  const { id, completed, text } = newTodo;
+
+  //* Create li
+  const li = document.createElement("li");
+  li.setAttribute("id", id);
+
+  //* Add class with completed(status)
+  completed ? li.classList.add("lined") : "";
+
+  //* create check icon
+  const icon = document.createElement("i");
+  icon.setAttribute("class", "fas fa-check");
+  //? append vs. appendChild(Int. Ques.)
+  li.append(icon);
+
+  //* Create item text
+  const p = document.createElement("p");
+  p.innerText = text;
+  li.appendChild(p);
+
+  //* Create remove icon
+  const removeIcon = document.createElement("i");
+  icon.setAttribute("class", "fas fa-trash");
+  li.append(removeIcon);
 };
