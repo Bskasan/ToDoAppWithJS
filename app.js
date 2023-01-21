@@ -80,10 +80,19 @@ const createTodo = (newTodo) => {
   removeIcon.setAttribute("class", "fas fa-trash");
   li.append(removeIcon);
 
-  // console.log(li);
-
   //append li to ul
   //prepend vs. append
   // todoUl.append(li);
   todoUl.prepend(li);
 };
+
+//* Capturing vs Bubbling
+todoUl.addEventListener("click", (e) => {
+  if (e.target.classList.contains("fa-check")) {
+    alert("check clicked");
+  } else if (e.target.classList.contains("fa-trash")) {
+    alert("remove clicked");
+  } else {
+    alert("other element clicked");
+  }
+});
