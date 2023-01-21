@@ -126,7 +126,7 @@ li.checked .fa-check {
 }
 
 li.checked p {
-  color: rgb(41, 41, 41);
+  color: rgba(41, 41, 41, 0.514);
   text-decoration: line-through;
   font-weight: normal;
 }

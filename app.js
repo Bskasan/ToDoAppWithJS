@@ -28,9 +28,6 @@ addBtn.addEventListener("click", (e) => {
     alert("Please, enter new todo text!");
     return;
   }
-  // else{
-  //     alert("continue");
-  // }
   //continue func.
   const newTodo = {
     id: new Date().getTime(), //unique id with ms of now
@@ -92,7 +89,25 @@ todoUl.addEventListener("click", (e) => {
 
   if (e.target.classList.contains("fa-check")) {
     //alert("check clicked");
+
+    //* update UI
     e.target.parentElement.classList.toggle("checked");
+
+    //* update array
+    //todoList.map((todo) => {
+    //  if (todo.id == idAttr) {
+    //    todo.completed = !todo.completed;
+    // }
+    //});
+
+    todoList.forEach((todo)=>{
+        if(todo.id == idAttr){
+            todo.completed = !todo.completed;
+        }
+    });
+
+    //* add updated array to localStorage
+    localStorage.setItem("todoList", JSON.stringify(todoList));
   } else if (e.target.classList.contains("fa-trash")) {
     // alert("remove clicked");
     //* remove from UI
