@@ -88,10 +88,20 @@ const createTodo = (newTodo) => {
 
 //* Capturing vs Bubbling
 todoUl.addEventListener("click", (e) => {
+  const idAttr = e.target.closest("li").getAttribute("id");
+
   if (e.target.classList.contains("fa-check")) {
     alert("check clicked");
   } else if (e.target.classList.contains("fa-trash")) {
-    alert("remove clicked");
+    // alert("remove clicked");
+    //* remove from UI
+    e.target.parentElement.remove();
+
+    //* id si ile silinmeyenleri filtrele array i update ==> silinenin arrayden remove et.
+    todoList = todoList.filter((todo) => todo.id != idAttr);
+
+    //* add to updated array to localStorage
+    localStorage.setItem("todoList", JSON.stringify(todoList));
   } else {
     alert("other element clicked");
   }
