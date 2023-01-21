@@ -91,7 +91,8 @@ todoUl.addEventListener("click", (e) => {
   const idAttr = e.target.closest("li").getAttribute("id");
 
   if (e.target.classList.contains("fa-check")) {
-    alert("check clicked");
+    //alert("check clicked");
+    e.target.parentElement.classList.toggle("checked");
   } else if (e.target.classList.contains("fa-trash")) {
     // alert("remove clicked");
     //* remove from UI
@@ -103,6 +104,6 @@ todoUl.addEventListener("click", (e) => {
     //* add to updated array to localStorage
     localStorage.setItem("todoList", JSON.stringify(todoList));
   } else {
-    alert("other element clicked");
+    //alert("other element clicked");
   }
 });
