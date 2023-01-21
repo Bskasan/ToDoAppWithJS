@@ -19,6 +19,17 @@ const getTodoListFromLocalStorage = () => {
 //! Alternative Way
 //! form.addEventListener("submit", ()=>{});
 
-addBtn.addEventListener("click", () => {
-    
+addBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (todoInput.value.trim() === "") {
+    alert("Please, enter new todo text!");
+    return;
+  }
+  //* alert("continue");
+  const newTodo = {
+    id : new Date().getTime , //* Unique id with ms of now
+    completed : false, //* Status
+    text : todoInput.value, //* User Input
+
+  }
 });
